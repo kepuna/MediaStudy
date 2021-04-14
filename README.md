@@ -1,2 +1,2 @@
-# SwiftStudy
-学习swift
+# MediaStudy
+学习音视频媒体开发

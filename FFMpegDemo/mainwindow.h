@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <audiothread.h>
 #include "playthread.h"
+#include "wavplaythread.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,16 +20,18 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-//    void on_checkBox_stateChanged(int arg1);
 
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
 
+    void on_playWavButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     AudioThread  *_audioThread = nullptr;
     PlayThread *_playThread = nullptr;
+    WAVPlayThread *_wavPlayThread = nullptr;
 
 };
 #endif // MAINWINDOW_H

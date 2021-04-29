@@ -71,3 +71,23 @@ void MainWindow::on_pushButton_3_clicked()
 
     FFmpegs::pcm2wav(header, "/Users/momo/Desktop/Resource/009.pcm", "/Users/momo/Desktop/Resource/004_out.wav");
 }
+
+void MainWindow::on_playWavButton_clicked()
+{
+    if(!_wavPlayThread) {
+        _wavPlayThread = new WAVPlayThread(this);
+        _wavPlayThread->start();
+
+         // 监听线程结束
+        connect(_wavPlayThread, &WAVPlayThread::finished,[this]() {
+             _wavPlayThread = nullptr;
+              ui->playWavButton->setText("开始播放");
+        });
+
+        ui->playWavButton->setText("结束播放");
+    } else {
+        _wavPlayThread->requestInterruption();
+        _wavPlayThread = nullptr;
+          ui->playWavButton->setText("开始播放");
+    }
+}

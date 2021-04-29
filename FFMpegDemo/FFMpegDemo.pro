@@ -13,13 +13,15 @@ SOURCES += \
     ffmpegs.cpp \
     main.cpp \
     mainwindow.cpp \
-    playthread.cpp
+    playthread.cpp \
+    wavplaythread.cpp
 
 HEADERS += \
     audiothread.h \
     ffmpegs.h \
     mainwindow.h \
-    playthread.h
+    playthread.h \
+    wavplaythread.h
 
 FORMS += \
     mainwindow.ui
